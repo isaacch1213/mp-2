@@ -57,7 +57,7 @@ const PokeImg = styled.img`
 `
 
 const PokeTitle = styled.h1`
-    font-size: calc(2px + 3vw);
+    font-size: calc(2px + 2.5vw);
     color: black;
     margin: 0;
 `
@@ -93,7 +93,7 @@ export default function PokemonCard(props: {data: Pokemon[]}) {
             {
                 props.data.map((poke: Pokemon) => 
                     <PokeCard key={poke.id}>
-                        <PokeTitle>{poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}</PokeTitle>
+                        <PokeTitle>{`${poke.name.charAt(0).toUpperCase() + poke.name.slice(1)} #${poke.id}`}</PokeTitle>
                         <PokeImg src={poke.front_default} alt={`Image of ${poke.name}`}/>
                         <PokeImgWrapper>
                             {
