@@ -23,6 +23,7 @@ const PokemonWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 2%;
 `
 
 const PokeCard = styled.div`
@@ -31,7 +32,7 @@ const PokeCard = styled.div`
     align-items: center;
     gap: 2vh;
     width: 100%;
-    border: solid 2px;
+    border: solid 5px;
     max-width: 30%;
     padding: 1%;
     margin-bottom: 2vh;
