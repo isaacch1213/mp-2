@@ -98,7 +98,7 @@ export default function PokemonCard(props: {data: Pokemon[]}) {
                         <PokeImgWrapper>
                             {
                                 poke.types.map((type: string) =>
-                                    <PokeIcon key={`${poke.id}-${type}`} src={typeIcons[type]} alt={`Image of ${type}`}/>
+                                    <PokeIcon key={type} src={typeIcons[type]} alt={`Image of ${type}`}/>
                                 )
                             }
                         </PokeImgWrapper>
