@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react'
-import type { PokemonNameUrl, Pokemon, PokemonTypeInfo } from "./interfaces/Pokemon.ts"
-import PokemonCard from './components/PokemonCard.tsx';
-import styled from 'styled-components';
+import { useState, useEffect } from "react";
+import type {
+  PokemonNameUrl,
+  Pokemon,
+  PokemonTypeInfo,
+} from "./interfaces/Pokemon.ts";
+import PokemonCard from "./components/PokemonCard.tsx";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export default function App() {
-
   const [data, setData] = useState<Pokemon[]>([]);
 
   useEffect(() => {
@@ -42,10 +45,13 @@ export default function App() {
               if (error instanceof Error) {
                 console.error("Message:", error.message);
               } else {
-                console.log("Something unexpected occured in the error:", error);
+                console.log(
+                  "Something unexpected occured in the error:",
+                  error,
+                );
               }
             }
-          })
+          }),
         );
         setData(pokemonDetails);
         console.log(pokemonDetails);
@@ -57,16 +63,14 @@ export default function App() {
         }
       }
     }
-    fetchData()
-   }, []);
+    fetchData();
+  }, []);
 
   return (
     <>
-    
       <Wrapper>
-        <PokemonCard data={data}/>
+        <PokemonCard data={data} />
       </Wrapper>
     </>
-  )
+  );
 }
-
