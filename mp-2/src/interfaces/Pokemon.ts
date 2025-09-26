@@ -1,3 +1,8 @@
+export interface PokemonNameUrl {
+    name: string;
+    url: string;
+}
+
 export interface PokemonTypeInfo {
     slot: number;
     type: {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { Pokemon, PokemonTypeInfo } from "./interfaces/Pokemon.ts"
+import type { PokemonNameUrl, Pokemon, PokemonTypeInfo } from "./interfaces/Pokemon.ts"
 import PokemonCard from './components/PokemonCard.tsx';
 import styled from 'styled-components';
 
@@ -24,7 +24,7 @@ export default function App() {
         console.log(data);
 
         const pokemonDetails: Pokemon[] = await Promise.all(
-          data.results.map(async (pokemon: {name: string; url: string;}) => {
+          data.results.map(async (pokemon: PokemonNameUrl) => {
             try {
               const res = await fetch(pokemon.url);
               if (!res.ok) {

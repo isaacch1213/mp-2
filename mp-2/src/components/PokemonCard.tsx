@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import type { Pokemon, PokemonTypeInfo } from "../interfaces/Pokemon.ts"
+import type { Pokemon } from "../interfaces/Pokemon.ts"
 import normal from "../assets/normal.png";
 import fire from "../assets/fire.png";
 import water from "../assets/water.png";
