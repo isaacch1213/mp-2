@@ -17,6 +17,7 @@ import ghost from "../assets/ghost.png";
 import dragon from "../assets/dragon.png";
 import dark from "../assets/dark.png";
 import steel from "../assets/steel.png";
+import fairy from "../assets/fairy.png";
 
 const PokemonWrapper = styled.div`
     width: 80%;
@@ -32,7 +33,7 @@ const PokeCard = styled.div`
     align-items: center;
     gap: 2vh;
     width: 100%;
-    border: solid 5px;
+    border: solid 0.35vw;
     max-width: 30%;
     padding: 1%;
     margin-bottom: 2vh;
@@ -52,7 +53,7 @@ const PokeImg = styled.img`
     width: 80%;
     background-color: #CDFAFA;
     border: solid white 5px;
-    box-shadow: inset 0 0 0 2px black, 0 0 0 2px black;
+    box-shadow: inset 0 0 0 0.15vw black, 0 0 0 0.15vw black;
 `
 
 const PokeTitle = styled.h1`
@@ -80,6 +81,7 @@ export default function PokemonCard(props: {data: Pokemon[]}) {
         dragon: dragon,
         dark: dark,
         steel: steel,
+        fairy: fairy,
       };
 
     return (
