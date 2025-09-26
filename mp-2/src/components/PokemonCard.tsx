@@ -62,6 +62,10 @@ const PokeTitle = styled.h1`
     margin: 0;
 `
 
+const PokeWeight = styled.p`
+    font-size: calc(2px + 1.5vw);
+`
+
 export default function PokemonCard(props: {data: Pokemon[]}) {
     const typeIcons: Record<string, string> = {
         normal: normal,
@@ -98,6 +102,7 @@ export default function PokemonCard(props: {data: Pokemon[]}) {
                                 )
                             }
                         </PokeImgWrapper>
+                        <PokeWeight>{Math.round(((poke.weight / 10) * 2.20462) * 100) / 100} lbs</PokeWeight>
                     </PokeCard>
                 )
             }
