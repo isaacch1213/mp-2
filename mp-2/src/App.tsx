@@ -32,6 +32,7 @@ export default function App() {
               }
               const detail = await res.json();
               return {
+                id: detail.id,
                 name: pokemon.name,
                 front_default: detail.sprites.front_default,
                 types: detail.types.map((t: PokemonTypeInfo) => t.type.name),

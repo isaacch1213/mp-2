@@ -92,13 +92,13 @@ export default function PokemonCard(props: {data: Pokemon[]}) {
         <PokemonWrapper>
             {
                 props.data.map((poke: Pokemon) => 
-                    <PokeCard>
+                    <PokeCard key={poke.id}>
                         <PokeTitle>{poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}</PokeTitle>
                         <PokeImg src={poke.front_default} alt={`Image of ${poke.name}`}/>
                         <PokeImgWrapper>
                             {
                                 poke.types.map((type: string) =>
-                                    <PokeIcon key={type} src={typeIcons[type]} alt={`Image of ${type}`}/>
+                                    <PokeIcon key={`${poke.id}-${type}`} src={typeIcons[type]} alt={`Image of ${type}`}/>
                                 )
                             }
                         </PokeImgWrapper>
