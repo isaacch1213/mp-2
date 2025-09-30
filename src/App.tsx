@@ -24,7 +24,6 @@ export default function App() {
           throw new Error(`Response status: ${res.status}`);
         }
         const data = await res.json();
-        console.log(data);
 
         const pokemonDetails: Pokemon[] = await Promise.all(
           data.results.map(async (pokemon: PokemonNameUrl) => {
@@ -54,7 +53,6 @@ export default function App() {
           }),
         );
         setData(pokemonDetails);
-        console.log(pokemonDetails);
       } catch (error) {
         if (error instanceof Error) {
           console.error("Message:", error.message);

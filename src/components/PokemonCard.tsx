@@ -69,6 +69,7 @@ const PokeWeight = styled.p`
 `;
 
 export default function PokemonCard(props: { data: Pokemon[] }) {
+  // Used a record to store a dictionary relationship between the type and the image url
   const typeIcons: Record<string, string> = {
     normal: normal,
     fire: fire,
@@ -94,6 +95,7 @@ export default function PokemonCard(props: { data: Pokemon[] }) {
     <PokemonWrapper>
       {props.data.map((poke: Pokemon) => (
         <PokeCard key={poke.id}>
+          {/* Utilized JavaScript helper function to make Pokemon first character uppercase*/}
           <PokeTitle>{`${poke.name.charAt(0).toUpperCase() + poke.name.slice(1)} #${poke.id}`}</PokeTitle>
           <PokeImg src={poke.front_default} alt={`Image of ${poke.name}`} />
           <PokeImgWrapper>
@@ -106,6 +108,7 @@ export default function PokemonCard(props: { data: Pokemon[] }) {
             ))}
           </PokeImgWrapper>
           <PokeWeight>
+            {/* Weight of pokemon in API is in hectogram, this converts it into pounds*/}
             {Math.round((poke.weight / 10) * 2.20462 * 100) / 100} lbs
           </PokeWeight>
         </PokeCard>
